@@ -1,0 +1,33 @@
+{
+  "name": "web-framework-benchmarks",
+  "version": "0.1.0",
+  "description": "Benchmarking the overhead and latency of different web frameworks",
+  "main": "index.js",
+  "scripts": {
+    "build_oas_def": "redoc-cli bundle OPEN_API_DEFINITION.yaml --options.jsonSampleExpandLevel=all --options.hideSingleRequestSampleTab=true --options.hideDownloadButton=true --options.expandSingleSchemaField=true --options.pathInMiddlePanel=true",
+    "serve_oas_def": "redoc-cli serve OPEN_API_DEFINITION.yaml --watch --options.jsonSampleExpandLevel=all --options.hideSingleRequestSampleTab=true --options.hideDownloadButton=true --options.expandSingleSchemaField=true --options.pathInMiddlePanel=true",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bttger/web-framework-benchmarks.git"
+  },
+  "keywords": [
+    "web",
+    "framework",
+    "benchmark",
+    "test",
+    "comparison",
+    "overhead",
+    "latency"
+  ],
+  "author": "Tom Boettger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bttger/web-framework-benchmarks/issues"
+  },
+  "homepage": "https://github.com/bttger/web-framework-benchmarks#readme",
+  "devDependencies": {
+    "redoc-cli": "^0.9.9"
+  }
+}
