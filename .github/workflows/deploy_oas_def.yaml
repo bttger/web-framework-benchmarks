@@ -14,9 +14,6 @@ jobs:
         run: |
           npm ci
           npm run build_oas_def
-          mv redoc-static.html index.html
-          mkdir dist
-          mv index.html dist
 
       - name: Deploy to GitHub Pages
         if: success()

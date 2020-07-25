@@ -4,7 +4,7 @@
   "description": "Benchmarking the overhead and latency of different web frameworks",
   "main": "index.js",
   "scripts": {
-    "build_oas_def": "redoc-cli bundle OPEN_API_DEFINITION.yaml --options.jsonSampleExpandLevel=all --options.hideSingleRequestSampleTab=true --options.hideDownloadButton=true --options.expandSingleSchemaField=true --options.pathInMiddlePanel=true",
+    "build_oas_def": "redoc-cli bundle OPEN_API_DEFINITION.yaml -o 'dist/index.html' --options.jsonSampleExpandLevel=all --options.hideSingleRequestSampleTab=true --options.hideDownloadButton=true --options.expandSingleSchemaField=true --options.pathInMiddlePanel=true",
     "serve_oas_def": "redoc-cli serve OPEN_API_DEFINITION.yaml --watch --options.jsonSampleExpandLevel=all --options.hideSingleRequestSampleTab=true --options.hideDownloadButton=true --options.expandSingleSchemaField=true --options.pathInMiddlePanel=true",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
