@@ -1,0 +1,266 @@
+openapi: '3.0.3'
+info:
+  title: bttger/web-framework-benchmarks
+  description: |
+    ### This is the OpenAPI Definition of the [bttger/web-framework-benchmarks](https://github.com/bttger/web-framework-benchmarks) project to benchmark the overhead and latency of different popular web frameworks.
+  version: '0.1.0'
+  license:
+    name: MIT
+    url: https://github.com/bttger/web-framework-benchmarks/blob/master/LICENSE
+servers:
+  - url: http://localhost:8080
+paths:
+  /serialize:
+    get:
+      operationId: getSerialized
+      responses:
+        "200":
+          description: An object with a message property of the type string.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: "Hello, World!"
+  /serialize/big:
+    get:
+      operationId: getSerializedBig
+      responses:
+        "200":
+          description: An object covering all JSON types and being relatively large.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  family:
+                    type: string
+                    description: Elephantidae
+                  scientificClassification:
+                    type: object
+                    properties:
+                      kingdom:
+                        type: string
+                        description: Animalia
+                      phylum:
+                        type: string
+                        description: Chordata
+                      class:
+                        type: string
+                        description: Mammalia
+                      order:
+                        type: string
+                        description: Proboscidea
+                      superfamily:
+                        type: string
+                        description: Elephantoidea
+                      classifier:
+                        type: object
+                        properties:
+                          name:
+                            type: string
+                            description: John Edward Gray
+                          born:
+                            type: object
+                            properties:
+                              year:
+                                type: number
+                                description: "1800"
+                              month:
+                                type: string
+                                description: February
+                              day:
+                                type: number
+                                description: "12"
+                              city:
+                                type: string
+                                description: Walsall
+                              country:
+                                type: string
+                                description: England
+                          died:
+                            type: object
+                            properties:
+                              year:
+                                type: number
+                                description: "1875"
+                              month:
+                                type: string
+                                description: March
+                              day:
+                                type: number
+                                description: "7"
+                              city:
+                                type: string
+                                description: London
+                              country:
+                                type: string
+                                description: England
+                          publications:
+                            type: array
+                            description: |
+                              An array of 40 entries with publications of the classifier. Since we do not care about the content, we just generate
+                              data with ascending year. The generation is solved on-demand and not with a pre-initialized object, to simulate the
+                              language's performance losses when iterating through a database response.
+                            items:
+                              type: object
+                              properties:
+                                year:
+                                  type: number
+                                  description: "1821"
+                                related:
+                                  type: boolean
+                                  description: "true"
+                                description:
+                                  type: string
+                                  description: Some content 123
+  /plainText:
+    get:
+      operationId: getPlainText
+      responses:
+        "200":
+          description: Plain text outputting "Hello, World!"
+          content:
+            text/plain; charset=utf-8:
+              description: "Hello, World!"
+  /query:
+    get:
+      operationId: getQueriedResult
+      description: The response has to confirm if an object with the queried properties is available.
+      parameters:
+        - name: apiKey
+          in: header
+          description: zb478fb3
+          required: true
+          schema:
+            type: string
+        - name: session
+          in: cookie
+          description: jhg723bf
+          required: true
+          schema:
+            type: string
+        - name: name
+          in: query
+          description: Dozer
+          required: true
+          schema:
+            type: string
+        - name: type
+          in: query
+          description: ATX
+          required: true
+          schema:
+            type: string
+        - name: length
+          in: query
+          description: "800"
+          required: true
+          schema:
+            type: number
+        - name: width
+          in: query
+          description: "800"
+          required: true
+          schema:
+            type: number
+        - name: allow
+          in: query
+          description: "true"
+          required: true
+          schema:
+            type: boolean
+      responses:
+        "200":
+          description: A confirmation object containing the corresponding id.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: number
+                    description: "6000"
+                  foundAt:
+                    type: string
+                    description: 2020-07-25T18:59:33Z (Current time in ISO 8601 UTC Format)
+  /insert:
+    post:
+      operationId: insertObject
+      description: Parses the transmitted object, serializes it in a new object with an id and returns it.
+      requestBody:
+        description: An object containing all information to create a new object.
+        required: true
+        content:
+          application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: Sample
+                  addresses:
+                    type: array
+                    description: Two address items
+                    items:
+                      type: object
+                      properties:
+                        street:
+                          type: string
+                          description: Breite Straße
+                        number:
+                          type: number
+                          description: "292"
+                        city:
+                          type: string
+                          description: Lübeck
+                  oldTown:
+                    type: boolean
+                    description: "true"
+              example:
+                name: Sightseeing
+                addresses:
+                  - street: Breite Straße
+                    number: 89
+                    city: Lübeck
+                  - street: Breite Straße
+                    number: 89
+                    city: Lübeck
+                oldTown: true
+      responses:
+        "201":
+          description: A confirmation object containing the created object.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: number
+                    description: 300
+                  name:
+                    type: string
+                    description: Sample
+                  addresses:
+                    type: array
+                    description: Two address items
+                    items:
+                      type: object
+                      properties:
+                        street:
+                          type: string
+                          description: Breite Straße
+                        number:
+                          type: number
+                          description: "292"
+                        city:
+                          type: string
+                          description: Lübeck
+                  oldTown:
+                    type: boolean
+                    description: "true"
+                  createdAt:
+                    type: string
+                    description: 2020-07-25T18:59:33Z (Current time in ISO 8601 UTC Format)
