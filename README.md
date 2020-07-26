@@ -2,7 +2,7 @@
 
 **Benchmarking the overhead ⚙️ and latency ⏱️ of different popular web frameworks.**
 
-Head over to the [OpenAPI Definition](https://bttger.github.io/web-framework-benchmarks/) to see how the web frameworks are benchmarked. The corresponding [yaml definition file]() lies in this repository. It defines the interface which every web framework has to implement. The endpoints are chosen so that they cover the performance of the **routing**, **parsing** (of request parameters) and **serialization** (of responses) as distinctly as possible.
+Head over to the [OpenAPI Definition](https://bttger.github.io/web-framework-benchmarks/) to see how the web frameworks are benchmarked. The corresponding [yaml definition file](https://github.com/bttger/web-framework-benchmarks/blob/master/OPEN_API_DEFINITION.yaml) lies in this repository. It defines the interface which every web framework has to implement. The endpoints are chosen so that they cover the performance of the **routing**, **parsing** (of request parameters) and **serialization** (of responses) as distinctly as possible.
 
 ## Distinction from Other Benchmarks
 
@@ -46,7 +46,7 @@ The goal is to cover popular web frameworks with a relatively large user base. T
 
 This benchmark project is ideal for anyone who would like to get a taste of a new web framework and compare different frameworks in terms of both performance and code. Everyone is encouraged to contribute a new web framework via pull request or propose a new one via the issue tracker.
 
-When deciding which framework to implement, you can either choose one from the [list of proposed one's](#proposed-web-frameworks), which does not yet have a check mark, or choose another one of your choice. We don't have a hard limit for popularity, but the framework should have at least about 5k stars or have gained a lot of traction in the recent past. When opening a pull request with the code for a new one, you must stick to the [defined interface](). It is kept simple and also practices working with web frameworks.
+When deciding which framework to implement, you can either choose one from the [list of proposed one's](#proposed-web-frameworks), which does not yet have a check mark, or choose another one of your choice. We don't have a hard limit for popularity, but the framework should have at least about 5k stars or have gained a lot of traction in the recent past. When opening a pull request with the code for a new one, you must stick to the [defined interface](https://github.com/bttger/web-framework-benchmarks/blob/master/OPEN_API_DEFINITION.yaml). It is kept simple and also practices working with web frameworks. And of course, you can also improve existing code to demonstrate how to achieve better performance. 🏎️
 
 So give it a try, help the dev community to make better decisions and to choose an efficient and therefore cost-saving and environmentally friendly web framework. 🤓
 
