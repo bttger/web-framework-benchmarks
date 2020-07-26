@@ -2,9 +2,9 @@ const fastify = require("fastify")()
 
 
 /*
-    getSerialize
+    getSerialized
 */
-const getSerializeOptions = {
+const getSerializedOptions = {
     schema: {
         response: {
             200: {
@@ -17,15 +17,15 @@ const getSerializeOptions = {
     }
 }
 
-fastify.get("/serialize", getSerializeOptions, (request, reply) => {
+fastify.get("/serialize", getSerializedOptions, (request, reply) => {
     reply.send({ message: "Hello, World!" })
 })
 
 
 /*
-    getSerializeBig
+    getSerializedBig
 */
-const getSerializeBigOptions = {
+const getSerializedBigOptions = {
     schema: {
         response: {
             200: {
@@ -87,7 +87,7 @@ const getSerializeBigOptions = {
     }
 }
 
-fastify.get("/serialize/big", getSerializeBigOptions, (request, reply) => {
+fastify.get("/serialize/big", getSerializedBigOptions, (request, reply) => {
     const resp = {
         family: "Elephantidae",
         scientificClassification: {
