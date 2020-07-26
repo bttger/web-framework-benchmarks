@@ -2,7 +2,10 @@ openapi: '3.0.3'
 info:
   title: bttger/web-framework-benchmarks
   description: |
-    ### This is the OpenAPI Definition of the [bttger/web-framework-benchmarks](https://github.com/bttger/web-framework-benchmarks) project to benchmark the overhead and latency of different popular web frameworks.
+    ### This is the OpenAPI Definition of the [bttger/web-framework-benchmarks](https://github.com/bttger/web-framework-benchmarks) project to benchmark the overhead ⚙️ and latency ⏱️ of different popular web frameworks.
+    It defines the interface which every web framework has to implement. The endpoints are chosen so that they cover the performance of the **routing**, **parsing** (of request parameters) and **serialization** (of responses) as distinctly as possible.
+    
+    This definition contains the mandatory response data in the description of properties.
   version: '0.1.0'
   license:
     name: MIT
@@ -66,13 +69,13 @@ paths:
                             type: object
                             properties:
                               year:
-                                type: number
+                                type: integer
                                 description: "1800"
                               month:
                                 type: string
                                 description: February
                               day:
-                                type: number
+                                type: integer
                                 description: "12"
                               city:
                                 type: string
@@ -84,13 +87,13 @@ paths:
                             type: object
                             properties:
                               year:
-                                type: number
+                                type: integer
                                 description: "1875"
                               month:
                                 type: string
                                 description: March
                               day:
-                                type: number
+                                type: integer
                                 description: "7"
                               city:
                                 type: string
@@ -101,22 +104,22 @@ paths:
                           publications:
                             type: array
                             description: |
-                              An array of 40 entries with publications of the classifier. Since we do not care about the content, we just generate
+                              An array of 50 entries with publications of the classifier. Since we do not care about the content, we just generate
                               data with ascending year. The generation is solved on-demand and not with a pre-initialized object, to simulate the
-                              language's performance losses when iterating through a database response.
+                              language's performance losses when iterating through an (imaginary) database response.
                             items:
                               type: object
                               properties:
                                 year:
-                                  type: number
+                                  type: integer
                                   description: "1821"
                                 related:
                                   type: boolean
                                   description: "true"
                                 description:
                                   type: string
-                                  description: Some content 123
-  /plainText:
+                                  description: Some discovery in 1821
+  /plain/text:
     get:
       operationId: getPlainText
       responses:
@@ -125,30 +128,42 @@ paths:
           content:
             text/plain; charset=utf-8:
               description: "Hello, World!"
-  /query:
+  /query/{userId}/tools/{offset}:
     get:
-      operationId: getQueriedResult
+      operationId: getQueryResult
       description: The response has to confirm if an object with the queried properties is available.
       parameters:
-        - name: apiKey
+        - name: userId
+          in: path
+          description: "300"
+          required: true
+          schema:
+            type: integer
+        - name: offset
+          in: path
+          description: "10"
+          required: true
+          schema:
+            type: integer
+        - name: x-api-key
           in: header
           description: zb478fb3
           required: true
           schema:
             type: string
-        - name: session
-          in: cookie
+        - name: x-session-id
+          in: header
           description: jhg723bf
           required: true
           schema:
             type: string
-        - name: name
+        - name: model
           in: query
           description: Dozer
           required: true
           schema:
             type: string
-        - name: type
+        - name: factor
           in: query
           description: ATX
           required: true
@@ -159,13 +174,13 @@ paths:
           description: "800"
           required: true
           schema:
-            type: number
+            type: integer
         - name: width
           in: query
           description: "800"
           required: true
           schema:
-            type: number
+            type: integer
         - name: allow
           in: query
           description: "true"
@@ -181,15 +196,15 @@ paths:
                 type: object
                 properties:
                   id:
-                    type: number
+                    type: integer
                     description: "6000"
                   foundAt:
                     type: string
-                    description: 2020-07-25T18:59:33Z (Current time in ISO 8601 UTC Format)
+                    description: 2020-07-25T18:59:33.384Z (Current time in ISO 8601 UTC Format)
   /insert:
     post:
       operationId: insertObject
-      description: Parses the transmitted object, serializes it in a new object with an id and returns it.
+      description: Parses the transmitted object, serializes it with an additional id and creation timestamp and returns it.
       requestBody:
         description: An object containing all information to create a new object.
         required: true
@@ -211,7 +226,7 @@ paths:
                           type: string
                           description: Breite Straße
                         number:
-                          type: number
+                          type: integer
                           description: "292"
                         city:
                           type: string
@@ -238,7 +253,7 @@ paths:
                 type: object
                 properties:
                   id:
-                    type: number
+                    type: integer
                     description: 300
                   name:
                     type: string
@@ -253,7 +268,7 @@ paths:
                           type: string
                           description: Breite Straße
                         number:
-                          type: number
+                          type: integer
                           description: "292"
                         city:
                           type: string

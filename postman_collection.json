@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "b1cd8934-9c6f-46d6-bdfa-e9fdb4f5b5e7",
+		"name": "bttger/web-framework-benchmarks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "insertObject",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Sightseeing\",\"addresses\":[{\"street\":\"Breite Straße\",\"number\":89,\"city\":\"Lübeck\"},{\"street\":\"Breite Straße\",\"number\":89,\"city\":\"Lübeck\"}],\"oldTown\":true}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/insert",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getQueryResult",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "zb478fb3",
+						"type": "text"
+					},
+					{
+						"key": "x-session-id",
+						"value": "jhg723bf",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8080/query/300/tools/10?model=Dozer&factor=ATX&length=800&width=800&allow=true",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"query",
+						"300",
+						"tools",
+						"10"
+					],
+					"query": [
+						{
+							"key": "model",
+							"value": "Dozer"
+						},
+						{
+							"key": "factor",
+							"value": "ATX"
+						},
+						{
+							"key": "length",
+							"value": "800"
+						},
+						{
+							"key": "width",
+							"value": "800"
+						},
+						{
+							"key": "allow",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPlainText",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/plain/text",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"plain",
+						"text"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSerializedBig",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/serialize/big",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"serialize",
+						"big"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSerialized",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/serialize",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"serialize"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
