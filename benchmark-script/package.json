@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "autocannon": "^5.0.1"
+  }
+}
