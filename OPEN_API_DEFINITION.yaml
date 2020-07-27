@@ -127,7 +127,8 @@ paths:
           description: Plain text outputting "Hello, World!"
           content:
             text/plain; charset=utf-8:
-              description: "Hello, World!"
+              example:
+                "Hello, World!"
   /query/{userId}/tools/{offset}:
     get:
       operationId: getQueryResult
@@ -254,7 +255,7 @@ paths:
                 properties:
                   id:
                     type: integer
-                    description: 300
+                    description: "300"
                   name:
                     type: string
                     description: Sample
