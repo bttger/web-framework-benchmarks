@@ -1,4 +1,6 @@
-const fastify = require('fastify')()
+"use strict"
+
+const fastify = require("fastify")()
 
 module.exports = () => {
     /*

@@ -1,6 +1,8 @@
-const cluster = require('cluster');
-const os = require('os');
-const app = require('./app');
+"use strict"
+
+const cluster = require("cluster");
+const os = require("os");
+const app = require("./app");
 
 if (cluster.isMaster) {
     const cpuCount = os.cpus().length;
@@ -13,8 +15,8 @@ if (cluster.isMaster) {
     app();
 }
 
-cluster.on('exit', function (worker) {
-    console.log(`Worker ${worker.id} died'`);
-    console.log(`Starting a new cluster process...`);
+cluster.on("exit", function (worker) {
+    console.log(`Worker ${worker.id} died`);
+    console.log("Starting a new cluster process...");
     cluster.fork();
 });
