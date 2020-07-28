@@ -193,9 +193,9 @@ fastify.get("/query/:userId/tools/:offset", getQueryResultOptions, (request, rep
         error.statusCode = 404
         error.message = "Check your query arguments again."
         reply.send(error)
+    } else {
+        reply.send({ id: 6000, foundAt: (new Date).toISOString() })
     }
-
-    reply.send({ id: 6000, foundAt: (new Date).toISOString() })
 })
 
 
