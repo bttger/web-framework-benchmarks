@@ -1,6 +1,7 @@
 "use strict"
 
 const fastify = require("fastify")()
+const fib = require("../fibonacci")
 
 
 /*
@@ -251,6 +252,27 @@ fastify.post("/insert", insertObjectOptions, (request, reply) => {
     request.body.createdAt = (new Date).toISOString()
     request.body.id = 300
     reply.code(201).send(request.body)
+})
+
+
+/*
+    getCalculated
+*/
+const getCalculatedOptions = {
+    schema: {
+        response: {
+            200: {
+                type: "object",
+                properties: {
+                    fibonacci: { type: "number" }
+                }
+            }
+        }
+    }
+}
+
+fastify.get("/calculate", getCalculatedOptions, (request, reply) => {
+    reply.send({ fibonacci: fib(27) })
 })
 
 

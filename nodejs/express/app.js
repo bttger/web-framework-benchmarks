@@ -1,6 +1,7 @@
 "use strict"
 
 const express = require('express')
+const fib = require("../fibonacci")
 const app = express()
 app.use(express.json())
 
@@ -96,6 +97,14 @@ app.post("/insert", (request, reply) => {
     request.body.createdAt = (new Date).toISOString()
     request.body.id = 300
     reply.status(201).send(request.body)
+})
+
+
+/*
+    getCalculated
+*/
+app.get("/calculate", (request, reply) => {
+    reply.send({ fibonacci: fib(27) })
 })
 
 
