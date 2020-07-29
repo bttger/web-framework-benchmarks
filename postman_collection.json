@@ -6,21 +6,12 @@
 	},
 	"item": [
 		{
-			"name": "insertObject",
+			"name": "getSerialized",
 			"request": {
-				"method": "POST",
+				"method": "GET",
 				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\"name\":\"Sightseeing\",\"addresses\":[{\"street\":\"Breite Straße\",\"number\":89,\"city\":\"Lübeck\"},{\"street\":\"Breite Straße\",\"number\":89,\"city\":\"Lübeck\"}],\"oldTown\":true}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/insert",
+					"raw": "http://127.0.0.1:8080/serialize",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -30,7 +21,53 @@
 					],
 					"port": "8080",
 					"path": [
-						"insert"
+						"serialize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSerializedBig",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/serialize/big",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"serialize",
+						"big"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPlainText",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/plain/text",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"plain",
+						"text"
 					]
 				}
 			},
@@ -98,12 +135,21 @@
 			"response": []
 		},
 		{
-			"name": "getPlainText",
+			"name": "insertObject",
 			"request": {
-				"method": "GET",
+				"method": "POST",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"Sightseeing\",\"addresses\":[{\"street\":\"Breite Straße\",\"number\":89,\"city\":\"Lübeck\"},{\"street\":\"Breite Straße\",\"number\":89,\"city\":\"Lübeck\"}],\"oldTown\":true}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://127.0.0.1:8080/plain/text",
+					"raw": "http://127.0.0.1:8080/insert",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -113,20 +159,19 @@
 					],
 					"port": "8080",
 					"path": [
-						"plain",
-						"text"
+						"insert"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "getSerializedBig",
+			"name": "getCalculated",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8080/serialize/big",
+					"raw": "http://127.0.0.1:8080/calculate",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -136,30 +181,7 @@
 					],
 					"port": "8080",
 					"path": [
-						"serialize",
-						"big"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "getSerialized",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:8080/serialize",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8080",
-					"path": [
-						"serialize"
+						"calculate"
 					]
 				}
 			},

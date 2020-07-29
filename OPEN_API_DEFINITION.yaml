@@ -280,3 +280,26 @@ paths:
                   createdAt:
                     type: string
                     description: 2020-07-25T18:59:33Z (Current time in ISO 8601 UTC Format)
+  /calculate:
+    get:
+      operationId: getCalculated
+      description: |
+        This endpoint actually does not benchmark the framework itself, but the ability of the language to take advantage of all available cores when running computationally intensive tasks.
+        The goal is that one request does not block the whole application and to keep the latency as low as possible.
+        
+        Some frameworks have that feature built-in and others require developers to implement it manually using the language's core libraries.
+
+        **For the calculation of the fibonacci number we use the recursive implementation to increase the time complexity [O(2^N)].
+        It covers a realistic case of some backend computation, e.g. cryptographic functions. When tested on my machine, the 27th fibonacci number
+        took roughly the same time to calculate as the verification of a password with the `argon2i` algorithm (time cost value set to 3, hash length of 32 bytes, salt length of 16 bytes).**
+      responses:
+        "200":
+          description: An object returning the fibonacci number of 27.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  fibonacci:
+                    type: number
+                    description: "317811"
