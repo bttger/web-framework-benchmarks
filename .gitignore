@@ -1,2 +1,10 @@
+# nodejs
 node_modules
+
+# vs code
 .vscode
+
+# python
+venv
+venv-win
+__pycache__

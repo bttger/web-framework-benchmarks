@@ -15,14 +15,14 @@ The goal is to cover popular web frameworks with a relatively large user base. T
 ### Proposed Web Frameworks
 
 #### Node.js
-- Express
+- Express ✔️
 - Nest
 - Koa
 - Sails
 - Fastify ✔️
 
 #### Python
-- Flask
+- Flask ✔️
 - Django
 - FastAPI
 
