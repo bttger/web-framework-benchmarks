@@ -69,6 +69,7 @@ async function insertObject() {
         url: `http://localhost:${PORT}/insert`,
         connections: CONNECTIONS,
         amount: AMOUNT,
+        headers: { "content-type": "application/json" },
         body: '{"name":"Sightseeing","addresses":[{"street":"Breite Straße","number":89,"city":"Lübeck"},{"street":"Breite Straße","number":89,"city":"Lübeck"}],"oldTown":true}'
     })
     return result
