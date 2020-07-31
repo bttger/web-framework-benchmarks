@@ -24,7 +24,7 @@ The goal is to cover popular web frameworks with a relatively large user base. T
 #### Python
 - Flask ✔️
 - Django
-- FastAPI
+- FastAPI ✔️
 
 #### Java
 - Spring
