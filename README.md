@@ -2,7 +2,7 @@
 
 **Benchmarking the overhead ⚙️ and latency ⏱️ of different popular web frameworks.**
 
-Head over to the [OpenAPI Definition](https://bttger.github.io/web-framework-benchmarks/) to see how the web frameworks are benchmarked. The corresponding [yaml definition file](https://github.com/bttger/web-framework-benchmarks/blob/master/OPEN_API_DEFINITION.yaml) lies in this repository. It defines the interface which every web framework has to implement. The endpoints are chosen so that they cover the performance of the **routing**, **parsing** (of request parameters) and **serialization** (of responses) as distinctly as possible.
+Head over to the [OpenAPI Definition](https://bttger.github.io/web-framework-benchmarks/) to see how the web frameworks are benchmarked. It defines the interface which every web framework has to implement. The corresponding [yaml definition file](https://github.com/bttger/web-framework-benchmarks/blob/master/OPEN_API_DEFINITION.yaml) lies in this repository, as well as a [Postman collection](https://github.com/bttger/web-framework-benchmarks/blob/master/postman_collection.json) to easily test your endpoints during development. The endpoints are chosen so that they cover the performance of the **routing**, **parsing** (of request parameters) and **serialization** (of responses) as distinctly as possible.
 
 ## Distinction from Other Benchmarks
 
