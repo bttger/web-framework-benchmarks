@@ -20,6 +20,7 @@ The goal is to cover popular web frameworks with a relatively large user base. T
 - Koa
 - Sails
 - Fastify ✔️
+- Restify
 
 #### Python
 - Flask ✔️
@@ -27,9 +28,10 @@ The goal is to cover popular web frameworks with a relatively large user base. T
 - FastAPI ✔️
 
 #### Java
-- Spring
+- Spring ✔️
 - Play
 - Vert.x
+- Micronaut
 
 #### Go
 - Gin
