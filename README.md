@@ -15,34 +15,34 @@ The goal is to cover popular web frameworks with a relatively large user base. T
 ### Proposed Web Frameworks
 
 #### Node.js
-- Express ✔️
-- Nest
-- Koa
-- Sails
-- Fastify ✔️
-- Restify
+- [Express](https://github.com/expressjs/express) ✔️
+- [Nest](https://github.com/nestjs/nest)
+- [Koa](https://github.com/koajs/koa)
+- [Sails](https://github.com/balderdashy/sails)
+- [Fastify](https://github.com/fastify/fastify) ✔️
+- [Restify](https://github.com/restify/node-restify)
 
 #### Python
-- Flask ✔️
-- Django
-- FastAPI ✔️
+- [Flask](https://github.com/pallets/flask) ✔️
+- [Django](https://github.com/django/django)
+- [FastAPI](https://github.com/tiangolo/fastapi) ✔️
 
 #### Java
-- Spring ✔️
-- Play
-- Vert.x ✔️
-- Micronaut
+- [Spring](https://github.com/spring-projects/spring-boot) ✔️
+- [Play](https://github.com/playframework/playframework)
+- [Vert.x](https://github.com/eclipse-vertx/vert.x) ✔️
+- [Micronaut](https://github.com/micronaut-projects/micronaut-core)
 
 #### Go
-- Gin
+- [Gin](https://github.com/gin-gonic/gin)
 
 #### Ruby
-- Rails
+- [Rails](https://github.com/rails/rails)
 
 #### PHP
-- Laravel
-- Symfony
-- Yii2
+- [Laravel](https://github.com/laravel/laravel)
+- [Symfony](https://github.com/symfony/symfony)
+- [Yii2](https://github.com/yiisoft/yii2)
 
 ## Contributing
 
@@ -54,3 +54,4 @@ So give it a try, help the dev community to **make better decisions** and to cho
 
 ## Results
 
+I am still considering how the results can be best presented. I am thinking of a heat map similar to [this](https://krausest.github.io/js-framework-benchmark/current.html) one. I welcome all tips and ideas. Furthermore it should contain information about how many stars and contributors the project has and if the framework validates the requests and/or responses. I'll run all benchmarks when we implemented an adequate amount of web frameworks. Maybe in the future this task should be automated via isolated Docker containers.
