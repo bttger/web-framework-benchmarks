@@ -30,7 +30,7 @@ The goal is to cover popular web frameworks with a relatively large user base. T
 #### Java
 - Spring ✔️
 - Play
-- Vert.x
+- Vert.x ✔️
 - Micronaut
 
 #### Go
