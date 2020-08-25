@@ -34,7 +34,10 @@ The goal is to cover popular web frameworks with a relatively large user base. T
 - [Micronaut](https://github.com/micronaut-projects/micronaut-core)
 
 #### Go
-- [Gin](https://github.com/gin-gonic/gin)
+- [Gin](https://github.com/gin-gonic/gin) ✔️
+- [Echo](https://github.com/labstack/echo)
+- [Mux](https://github.com/gorilla/mux)
+- [Fiber](https://github.com/gofiber/fiber)
 
 #### Ruby
 - [Rails](https://github.com/rails/rails)
