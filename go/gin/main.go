@@ -110,19 +110,19 @@ func getPlainText(c *gin.Context) {
 func getQueryResult(c *gin.Context) {
 	var uriModel uri
 	if err := c.ShouldBindUri(&uriModel); err != nil {
-		c.JSON(400, gin.H{"message": err})
+		c.JSON(400, gin.H{"message": err.Error()})
 		return
 	}
 
 	var queryModel query
 	if err := c.ShouldBindQuery(&queryModel); err != nil {
-		c.JSON(400, gin.H{"message": err})
+		c.JSON(400, gin.H{"message": err.Error()})
 		return
 	}
 
 	var headerModel header
 	if err := c.ShouldBindHeader(&headerModel); err != nil {
-		c.JSON(400, gin.H{"message": err})
+		c.JSON(400, gin.H{"message": err.Error()})
 		return
 	}
 
@@ -135,7 +135,7 @@ func getQueryResult(c *gin.Context) {
 func insertObjectFunc(c *gin.Context) {
 	var insertObjectModel insertObject
 	if err := c.ShouldBindJSON(&insertObjectModel); err != nil {
-		c.JSON(400, gin.H{"message": err})
+		c.JSON(400, gin.H{"message": err.Error()})
 		return
 	}
 
